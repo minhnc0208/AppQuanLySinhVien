@@ -3,21 +3,35 @@ package com.example.appquanlysinhvien.activity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.appquanlysinhvien.R;
+import com.example.appquanlysinhvien.adapter.SinhvienAdapter;
+import com.example.appquanlysinhvien.model.Sinhvien;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     EditText edtTen, edtLop, edtDiaChi;
     Button btnHuy, btnThem;
     RecyclerView recyclerView;
+    ArrayList<Sinhvien>sinhviens;
+    SinhvienAdapter sinhvienAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sinhviens.add(new Sinhvien("Nguyen Van A","10A1","38 Nguyen Lam"));
+        sinhviens.add(new Sinhvien("Nguyen Van A","10A1","38 Nguyen Lam"));
+        sinhviens.add(new Sinhvien("Nguyen Van A","10A1","38 Nguyen Lam"));
+        sinhviens.add(new Sinhvien("Nguyen Van A","10A1","38 Nguyen Lam"));
+        sinhviens.add(new Sinhvien("Nguyen Van A","10A1","38 Nguyen Lam"));
+        sinhvienAdapter = new SinhvienAdapter(sinhviens);
+        recyclerView.setLayoutManager(new RelativeLayoutManager());
         mapview();
         // Recyclerview :
         // Hiển thị:
