@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     EditText edtTen, edtLop, edtDiachi;
-    Button btnHuy, btnThem;
+    Button btnHuy, btnThem, btnXoa;
     RecyclerView recyclerView;
     SinhvienAdapter sinhvienAdapter;
     ArrayList<Sinhvien> msinhviens;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
 
     private void init() {
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         edtLop = findViewById(R.id.edittextLop);
         btnHuy = findViewById(R.id.buttonCancel);
         btnThem = findViewById(R.id.buttonAdd);
+        btnXoa = findViewById(R.id.buttonXoa);
         recyclerView = findViewById(R.id.recyclerviewSinhvien);
     }
 

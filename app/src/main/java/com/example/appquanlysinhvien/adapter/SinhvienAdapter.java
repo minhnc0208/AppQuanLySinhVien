@@ -29,11 +29,13 @@ public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder
         View view = layoutInflater.inflate(R.layout.item_sinhvien, null);
         return new Holder(view);
     }
+
     public void addSinhvien(@NonNull Sinhvien sinhvien) {
         msinhviens.add(sinhvien);
         notifyDataSetChanged();// thay đổi
 
     }
+
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         Sinhvien sinhvien = msinhviens.get(position);
@@ -57,6 +59,13 @@ public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder
             txtTen = itemView.findViewById(R.id.textviewTen);
             txtLop = itemView.findViewById(R.id.textviewLop);
             btnXoa = itemView.findViewById(R.id.buttonXoa);
+            btnXoa.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    msinhviens.remove(getLayoutPosition());
+                    notifyDataSetChanged();
+                }
+            });
         }
     }
 
