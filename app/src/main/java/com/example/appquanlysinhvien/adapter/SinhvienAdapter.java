@@ -5,10 +5,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.appquanlysinhvien.R;
 import com.example.appquanlysinhvien.model.Sinhvien;
+
 import java.util.ArrayList;
 
 public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder> {
@@ -26,7 +29,11 @@ public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder
         View view = layoutInflater.inflate(R.layout.item_sinhvien, null);
         return new Holder(view);
     }
+    public void addSinhvien(@NonNull Sinhvien sinhvien) {
+        msinhviens.add(sinhvien);
+        notifyDataSetChanged();// thay đổi
 
+    }
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         Sinhvien sinhvien = msinhviens.get(position);
@@ -52,4 +59,6 @@ public class SinhvienAdapter extends RecyclerView.Adapter<SinhvienAdapter.Holder
             btnXoa = itemView.findViewById(R.id.buttonXoa);
         }
     }
+
+
 }
